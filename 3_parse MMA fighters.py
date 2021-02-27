@@ -35,18 +35,19 @@ def get_list_of_fighters(html):
     list_of_fighters = []
     soup = BeautifulSoup(html, 'lxml')
     trs = soup.find('table').find_all('tr')[2:]
-    fighter_data = {
-        'Name':None,
-        'URL': None,
-        'Country':None,
-        'DOB':None,
-        'Team':None,
-        'Stance':None,
-        'HT/WT': None,
-        'Reach':None,
-        'Nickname':None,
+    fighter_data = dict()
+#    fighter_data = {
+        #'Name':None,
+        #'URL': None,
+        #'Country':None,
+        #'DOB':None,
+        #'Team':None,
+        #'Stance':None,
+        #'HT/WT': None,
+        #'Reach':None,
+        #'Nickname':None,
 
-    }
+    #}
     for tr in trs:
         fighter = tr.find_all('td')[0]
         url = 'https://www.espn.com' + fighter.find('a').get('href')

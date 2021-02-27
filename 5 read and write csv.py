@@ -24,8 +24,8 @@ def write_csv(data:dict):
 def read_csv(filename:str):
     with open(filename) as file:
         fieldnames = ['key1', 'key2'] #etc
-        reader = csv.DictReader(filename, fieldnames=fieldnames)
+        reader = csv.DictReader(file, fieldnames=fieldnames)
 
         for row in reader:
-            # foo 
+            
             pass 
